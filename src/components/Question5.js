@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Question5Pic from '../assets/FotoVraag5.jpg'
 function Question5() {
   return (
     <div className='text-white text-xl'>
@@ -16,6 +16,9 @@ function Question5() {
         <option>9</option>
         <option>10</option>
       </select>
+      <div class="flex flex-col justify-center items-center">
+        <img src={Question5Pic} class="w-96  rounded-full mb-4 mt-4 border-solid border-8 border-black "></img>
+</div>
 </div>
   )
 }

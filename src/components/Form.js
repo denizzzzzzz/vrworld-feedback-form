@@ -4,10 +4,19 @@ import Question2 from './Question2';
 import Question3 from './Question3';
 import Question4 from './Question4';
 import Question5 from './Question5';
+import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { FaArrowAltCircleRight } from "react-icons/fa";
+
+
 
 function Form() {
 
 const [Question, setQuestion] = useState(0);
+const [formData, setFormData] = useState({
+  Vraag1Anders:"",
+  Vreselijk:"",
+
+})
 
 const QuestionTitles = 
         [
@@ -19,7 +28,7 @@ const QuestionTitles =
         ]
         const AnswerDisplay = () =>{
            if(Question == 0){
-            return<Question1/>
+            return<Question1 formData={formData} setFormData={setFormData}/>
            }
            else if(Question == 1){
             return<Question2/>
@@ -37,35 +46,39 @@ const QuestionTitles =
         }
   return (
     <div className='form flex flex-col justify-center items-center'>
-        <div className='progressbar'>
+        <div className='progressbar mt-24'>
             <div style={{width: Question == 0 ? "20%" : Question == 1 ? "40%" : Question == 2 ? "60%" : Question == 3 ? "80%" : "100%"}}>
 
             </div>
         </div>
-                <div className='form-container'>
-                <div className='header text-white text-xl'>
+                <div className='form-container bg-[#343232] rounded-lg'>
+                <div className='header text-white text-4xl bg-[#767474] rounded-lg pt-8 pb-8 mb-12'>
                     <h1>{QuestionTitles[Question]}</h1>
                 </div>
                 <div className='body'>
                 {AnswerDisplay()}
                 </div>
+                </div>
                 <div className='footer'>
-                <button className='text-white'
+                
+                <button 
                 disabled={Question == 0}
                 onClick={()=>{
                     setQuestion((currPage)=> currPage -1);
                 }}>
-                    Prev
+                    
+                    <FaArrowAltCircleLeft className='text-6xl text-[#85550E] mt-6'/>
                     </button>
-                <button className='text-white'
+                <button
+                    className='m-4'
                     disabled={Question == QuestionTitles.length -1}
                     onClick={()=>{
                         setQuestion((currPage)=> currPage +1);
                     }}>
-                    Next
+                    <FaArrowAltCircleRight className='text-6xl text-[#85550E] mt-6'/>
                     </button>
             </div>
-        </div>
+        
     </div>
   )
 }
