@@ -11,7 +11,7 @@ const Home = () => {
           <p>Welkom, met de knop hieronder kunt u door middel van een paar vragen</p><p>uw ervaring over VR-World met ons delen.</p> 
           <p>Want uw mening telt!</p>
         </div>
-        <button class="hover:bg-[#85550E]  relative bg-black rounded-lg text-white p-6 mt-4 md:text-2xl lg:text-xl lg:pb-8 lg:p-2">
+        <button class="hover:bg-[#85550E]  relative bg-black rounded-lg text-white p-6 mt-4 md:text-2xl lg:text-xl lg:pb-8 lg:p-2 " >
         <a href='/Vraag1'>Klik hier om uw ervaring te delen</a>
         <div class="absolute bottom-0 right-0  bg-[#d9d9d962] rounded-lg text-[#ffffffc1] ">
             <p class="text-sm">Geschatte tijd 3 min</p>
