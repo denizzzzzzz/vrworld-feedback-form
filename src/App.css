@@ -18,3 +18,13 @@ body{
 p{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.progressbar{
+  width: 400px;
+  height: 10px;
+  background-color: grey;
+  margin-bottom: 50px;
+}
+.progressbar div {
+  height: 100%;
+  background-color: #85550E;
+}

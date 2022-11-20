@@ -36,9 +36,12 @@ const QuestionTitles =
           
         }
   return (
-    <div className='form'>
-        <div className='progressbar'></div>
+    <div className='form flex flex-col justify-center items-center'>
+        <div className='progressbar'>
+            <div style={{width: Question == 0 ? "20%" : Question == 1 ? "40%" : Question == 2 ? "60%" : Question == 3 ? "80%" : "100%"}}>
 
+            </div>
+        </div>
                 <div className='form-container'>
                 <div className='header text-white text-xl'>
                     <h1>{QuestionTitles[Question]}</h1>
