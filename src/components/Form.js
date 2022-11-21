@@ -6,17 +6,22 @@ import Question4 from './Question4';
 import Question5 from './Question5';
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
+
+
 
 
 
 function Form() {
-
 const [Question, setQuestion] = useState(0);
 const [formData, setFormData] = useState({
-  Vraag1Anders:"",
-  Vreselijk:"",
+//   Vraag1Anders:"",
+//   Vraag2Anders:"",
+//   Vraag3Anders:"",
+//   Vraag4Anders:"",
 
 })
+
 
 const QuestionTitles = 
         [
@@ -31,13 +36,13 @@ const QuestionTitles =
             return<Question1 formData={formData} setFormData={setFormData}/>
            }
            else if(Question == 1){
-            return<Question2/>
+            return<Question2 formData={formData} setFormData={setFormData}/>
            }
            else if(Question == 2){
-            return<Question3/>
+            return<Question3 formData={formData} setFormData={setFormData}/>
            }
            else if(Question == 3){
-            return<Question4/>
+            return<Question4 formData={formData} setFormData={setFormData}/>
            }
            else if(Question == 4){
             return<Question5/>
@@ -52,7 +57,7 @@ const QuestionTitles =
             </div>
         </div>
                 <div className='form-container bg-[#343232] rounded-lg'>
-                <div className='header text-white text-4xl bg-[#767474] rounded-lg pt-8 pb-8 mb-12'>
+                <div className='Title text-white text-3xl bg-[#767474] rounded-lg pt-8 pb-8 mb-12'>
                     <h1>{QuestionTitles[Question]}</h1>
                 </div>
                 <div className='body'>
@@ -68,14 +73,22 @@ const QuestionTitles =
                 }}>
                     
                     <FaArrowAltCircleLeft className='text-6xl text-[#85550E] mt-6'/>
+                    
                     </button>
                 <button
                     className='m-4'
-                    disabled={Question == QuestionTitles.length -1}
                     onClick={()=>{
-                        setQuestion((currPage)=> currPage +1);
+                        if(Question == QuestionTitles.length -1){
+                            alert("FORMULIER VERZENDEN");
+                        }
+                        else{
+                            setQuestion((currPage) => currPage + 1);
+                        }
+                       
                     }}>
-                    <FaArrowAltCircleRight className='text-6xl text-[#85550E] mt-6'/>
+                    {Question == QuestionTitles.length -1 ? <FaCheckCircle className='text-6xl text-[#85550E] mt-6'/> : <FaArrowAltCircleRight className='text-6xl text-[#85550E] mt-6'/>}
+                    
+
                     </button>
             </div>
         
